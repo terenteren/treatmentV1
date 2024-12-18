@@ -1,0 +1,770 @@
+@charset "utf-8";
+
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+/* 초기화 */
+html {overflow-y:scroll}
+body {margin:0;padding:0;font-size:0.75em;font-family:'NanumSquare';background:#fff;overflow: hidden;}
+body {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
+h1, h2, h3, h4, h5, h6 {font-size:1em;font-family:'Malgun Gothic', dotum, sans-serif}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+
+ul, dl,dt,dd {margin:0;padding:0;list-style:none}
+legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
+label, input, button, select, img {vertical-align:middle;font-size:1em}
+input, button {margin:0;padding:0;font-family:'NanumSquare';font-size:1em}
+input[type="submit"] {cursor:pointer}
+button {cursor:pointer}
+
+textarea, select {font-family:'NanumSquare';font-size:1em}
+select {margin:0}
+p {margin:0;padding:0;word-break:break-all}
+hr {display:none}
+pre {overflow-x:scroll;font-size:1.1em}
+a {color:#000;text-decoration:none; cursor: pointer!important;}
+select{background-color: transparent; color: #000;}
+
+*, :after, :before {
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box;
+}
+
+input[type=text],input[type=password], textarea {
+-webkit-transition:all 0.30s ease-in-out;
+-moz-transition:all 0.30s ease-in-out;
+-ms-transition:all 0.30s ease-in-out;
+-o-transition:all 0.30s ease-in-out;
+outline:none;
+}
+
+input[type=password]{font-family: '기본 적용 폰트';}
+
+
+select, select:focus, select:active { outline:none; -webkit-tap-highlight-color: transparent;}
+button, button:focus, button:active { outline:none; -webkit-tap-highlight-color: transparent;}
+a, a:focus, a:active { outline:none; -webkit-tap-highlight-color: transparent;}
+input, input:focus, input:active { outline:none; -webkit-tap-highlight-color: transparent;}
+div, div:focus, div:active{ outline:none; -webkit-tap-highlight-color: transparent;}
+input:-webkit-autofill {
+-webkit-box-shadow: 0 0 0 1000px transparent inset;
+}
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+transition: background-color 5000s ease-in-out 0s;
+}
+
+
+/*공통 영역*/
+.not_scroll{overflow-y:hidden;}
+.wrap{width: 100%; display: inline-block; float: left; position: relative; text-align: center; background-color: #f0f5f9;}
+.inner{width: 100%; max-width: 800px; display: inline-block; text-align: left; background-color: #fff; min-height: 100vh; position: relative;}.container_wrap{width: 100%; display: inline-block; float: left; padding-bottom: 110px;}
+.container{width: 100%; display: inline-block; float: left; padding: 0 15px; margin-bottom: 30px; position: relative;}
+.container:last-child{margin-bottom: 0;}
+.main_container1{margin-bottom: 60px; background-image: linear-gradient(150deg, #118dd8, #8ED2FE); padding-top: 85px;}
+.division_bar{padding-top: 25px;}
+.division_bar::before{content: ""; width: calc(100% - 30px); display: inline-block; float: left; height: 1px; background-color: rgba(116,116,150,0.1); position: absolute; top: 0; left: 50%; transform: translateX(-50%);}
+.main_title{width: 100%; display: inline-block; float: left; color: #333; font-size: 15px; margin-bottom: 15px; font-weight: 700; height: 17px; line-height: 18px;}
+.main_container1 .main_title{color: #fff;}
+.main_title span{font-weight: 900; display: inline-block; padding: 0 2px; font-size: 17px;}
+.main_container2 .main_title span, .main_container3 .main_title span, .main_container4 .main_title span{color: #118dd8;}
+.sub_top{width: 100%; display: inline-block; float: left; height: 50px; padding: 0 15px; margin-bottom: 5px;}
+.back{width: 7px; display: inline-block; float: left; height: 100%; position: relative; cursor: pointer;}
+.back img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.del{width: 17px; display: inline-block; float: right; height: 100%; position: relative; cursor: pointer; margin-left: 15px;}
+.del img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.retouch{width: 19px; display: inline-block; float: left; height: 100%; position: relative; cursor: pointer;}
+.retouch img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.change{width: 23px; display: inline-block; float: left; height: 100%; position: relative; cursor: pointer;}
+.change img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.write{width: 17px; display: inline-block; float: left; height: 100%; position: relative; cursor: pointer;}
+.write img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.more{width: 17px; display: inline-block; float: right; height: 100%; position: relative; cursor: pointer; margin-left: 15px;}
+.more img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.page_name{width: calc(100% - 62px); display: inline-block; float: left; height: 100%; line-height: 50px; font-size: 14px; font-weight: 700; color: #333; padding: 0 10px;}
+
+/*팝업모음*/
+.popup{width: 400px; max-width: 90%; display: none; float: left; position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); background-color: #fff; border-radius: 15px; padding: 0 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); z-index: 99;}
+.popup_text{width: 100%; display: inline-block; float: left; font-size: 13px; font-weight: 700; white-space: pre-line; text-align: center; line-height: 160%; margin: 40px 0;}
+.popup_text span{font-weight: 700;}
+.popup_btn_wrap{width: 100%; display: inline-block; float: left; margin-bottom: 15px;}
+.popup_btn{width: calc(50% - 5px); display: inline-block; float: left; height: 45px; line-height: 43px; border: 1px solid #ddd; text-align: center; border-radius: 5px; font-size: 13px; margin-right: 10px; color: #666; cursor: pointer;}
+.popup_btn:last-child{margin-right: 0;}
+.popup_on{border-color: #01d3d5; background-color: #01d3d5; color: #fff; font-weight: 700;}
+
+
+/*상단헤드 영역_이전작업*/
+/*.top{width: 100%; display: inline-block; float: left; height: 75px; padding: 15px; position: absolute; top: 0; left: 0; z-index: 1;}
+.logo{width: 130px; display: inline-block; float: left; position: relative; height: 100%; background-color: #fff; border-radius: 7px;}
+.logo img{width: 110px; display: inline-block; float: left; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.top_menu{display: inline-block; float: right;}
+.notice{width: 45px; height: 45px; display: inline-block; float: left; position: relative; margin-right: 2px; cursor: pointer;}
+.notice img{width: 23px; display: inline-block; float: left; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.notice::after{content: ""; width: 10px; height: 10px; display: inline-block; float: left; border-radius: 50%; position: absolute; top: 50%; right: 10px; transform: translateY(-9px); background-color: #ed1b23; border: 2px solid #fff;}
+.user_wrap{width: 45px; display: inline-block; float: left; position: relative; cursor: pointer;}
+.user_select{width: 100%; height: 45px; display: inline-block; float: left; border-radius: 50%; overflow: hidden; border: 2px solid #fff;}
+.user_select img{width: 100%; height: 100%; display: inline-block; float: left; object-fit: cover;}
+.user_option_wrap{width: 45px; display: none; float: left; position: absolute; top: 50px; left: 0; padding: 3px; background-color: #fff; border-radius: 21px; z-index: 1; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.user_option{width: 100%; display: inline-block; float: left; height: 39px; border-radius: 50%; overflow: hidden; margin-bottom: 5px;}
+.user_option img{width: 100%; display: inline-block; float: left;  height: 100%; object-fit: cover;}
+.user_option:last-child{margin-bottom: 0;}*/
+
+/*하단메뉴 영역_이전작업*/
+/*.menu_wrap{width: 100%; max-width: 800px; display: inline-block; float: left; position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); padding: 15px; z-index: 9; background-color: rgba(255,255,255,0.5);}
+.menu_container{width: 100%; display: inline-block; float: left; background-color: #fff; height: 66px; border-radius: 40px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); padding: 10px 15px 10px 10px;}
+.menu_con{width: 20%; display: inline-block; float: left; height: 100%;}
+.menu_img{width: 100%; display: inline-block; float: left; height: 25px; text-align: center; margin-bottom: 10px;}
+.menu_img img{height: 100%;}
+.menu_img img.menu_img_off{display: inline-block;}
+.menu_img img.menu_img_on{display: none;}
+.menu_name{width: 100%; display: inline-block; float: left; height: 11px; line-height: 11px; font-size: 11px; text-align: center; font-weight: 700; color: #747496;}
+.menu_con_on img.menu_img_on{display: inline-block!important;}
+.menu_con_on img.menu_img_off{display: none!important;}
+.menu_con_on .menu_name{color: #118dd8!important}
+.blur{-webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);}*/
+
+
+/*상단헤드*/
+.wrap{background-color: #fff;}
+.inner{background-color: #e7eef9;}
+.index_head{width: 100%; display: inline-block; float: left; padding: 15px 17px 10px 15px;}
+.index_head_left{width: calc(100% - 45px); height: 45px; display: inline-block; float: left;}
+.index_head_user_img{width: 45px; height: 100%; display: inline-block; float: left; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.index_head_user_img img{width: 100%; height: 100%; display: inline-block; float: left; object-fit: cover; border-radius: 50%;}
+.index_head_user_info{height: 100%; display: inline-block; float: left; padding: 4px 0;}
+.index_head_user_name{width: 100%; height: 17px; line-height: 17px; display: inline-block; float: left; font-size: 17px; font-weight: 900; color: #11293c; margin-bottom: 8px;}
+.index_head_user_age{width: 100%; display: inline-block; float: left; height: 12px; line-height: 12px; font-size: 12px; color: #747496;}
+.index_head_right{height: 45px; display: inline-block; float: right;}
+.index_head_notice{width: 45px; height: 100%; display: inline-block; float: left; position: relative;}
+.index_head_notice img{width: 23px; display: inline-block; float: left; position: absolute; top: 0; right: 0;}
+.index_head_notice::after{content: ""; width: 10px; height: 10px; display: inline-block; float: left; border-radius: 50%; position: absolute; top: 4px; right: -1px; background-color: #ed1b23; border: 2px solid #11293c;}
+
+/*하단메뉴*/
+.index_menu_container{width: 100%; display: inline-block; float: left; max-width: 800px; position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 9; background-color: #fff; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 15px 15px 25px 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.index_menu_con{width: 20%; display: inline-block; float: left;}
+.index_menu_img{width: 100%; display: inline-block; float: left; height: 25px; text-align: center; margin-bottom: 10px;}
+.index_menu_img img{height: 100%;}
+.index_menu_img_off{display: inline-block;}
+.index_menu_img_on{display: none;}
+.index_menu_name{width: 100%; display: inline-block; float: left; height: 11px; line-height: 11px; font-size: 11px; text-align: center; font-weight: 700; color: #c9d5e1;}
+.index_menu_con_on img.index_menu_img_on{display: inline-block!important;}
+.index_menu_con_on img.index_menu_img_off{display: none!important;}
+.index_menu_con_on .index_menu_name{color: #11293c!important}
+
+
+/*메인페이지 영역_이전작업*/	
+/*.therapy_wrap{width: 100%; display: inline-block; float: left; padding-bottom: 30px; position: relative;}
+.therapy_container{width: 100%; display: inline-block; float: left;}
+.therapy_con{width: calc(50% - 5px); display: inline-block; float: left; margin-right: 10px; background-color: #fff; border-radius: 15px; padding: 15px 0; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); margin-bottom: 10px;}
+.therapy_con:nth-child(2n){margin-right: 0;}
+.therapy_add{width: 100%; display: inline-block; float: left; position: absolute; bottom: -30px; left: 0; height: 60px; background-color: #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); text-align: center; font-size: 15px; font-weight: 700; border-radius: 15px;}
+.therapy_add img{height: 13px; display: inline-block; float: left; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.drug_wrap{width: 100%; display: inline-block; float: left;}
+.drug_container{width: 100%; display: inline-block; float: left;}
+.drug_con{width: 100%; display: inline-block; float: left; height: 45px; border-radius: 15px; background-color: #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); margin-bottom: 10px; padding: 0 15px;}
+.drug_img{width: 19px; display: inline-block; float: left; height: 100%; position: relative;}
+.drug_img img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.drug_name{width: calc(100% - 25px); display: inline-block; float: left; height: 100%; line-height: 41px; font-size: 13px; font-weight: 900; padding: 0 10px;}
+.drug_btn{width: 6px; display: inline-block; float: left; height: 100%; position: relative;}
+.drug_btn img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.drug_add_wrap{width: 100%; display: inline-block; float: left;}
+.drug_add{width: calc(50% - 5px); display: inline-block; float: left; height: 60px; background-color: #fff; border-radius: 15px; margin-right: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); text-align: center; cursor: pointer;}
+.drug_add1{background-color: #118dd8;}
+.drug_add2{background-color: #747496;}
+.drug_add:last-child{margin-right: 0;}
+.drug_add_inner{display: inline-block; text-align: left; height: 100%;}
+.drug_add_name{display: inline-block; float: left; height: 100%; line-height: 60px; font-size: 13px; font-weight: 700; margin-right: 7px;}
+.drug_add1 .drug_add_name{color: #fff;}
+.drug_add2 .drug_add_name{color: #fff;}
+.drug_add_img{width: 11px; display: inline-block; float: left; height: 100%; position: relative;}
+.drug_add_img img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.calendar_wrap{width: 100%; display: inline-block; float: left;}
+.month_wrap{width: 100%; display: inline-block; float: left;}
+.month_prev, .month_next{width: 30px; display: inline-block; float: left; height: 30px; border-radius: 7px; position: relative; background-color: #118dd8; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); cursor: pointer;}
+.month_prev img, .month_next img{width: 6px; display: inline-block; float: left; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.month_date{width: calc(100% - 60px); display: inline-block; float: left; height: 30px; line-height: 30px; text-align: center; padding: 0 10px; font-size: 15px; font-weight: 900; color: #333;}
+.calendar_notice{width: 100%; display: inline-block; float: left; background-color: rgba(240,245,249,1); height: 30px; border-radius: 7px; text-align: center; margin: 10px 0;}
+.calendar_notice_inner{display: inline-block; text-align: left; height: 100%;}
+.calendar_notice_img{width: 13px; display: inline-block; float: left; height: 100%; position: relative; margin-right: 5px;}
+.calendar_notice_img img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.calendar_notice_text{display: inline-block; float: left; height: 100%; line-height: 30px; font-size: 13px; font-weight: 700; color: #747496;}
+.average_wrap{width: 100%; display: inline-block; float: left; margin-bottom: 15px; height: 13px; padding: 0 5px;}
+.average{height: 100%; display: inline-block; float: right;}
+.average_line{width: 20px; height: 100%; display: inline-block; float: left; position: relative; margin-right: 7px;}
+.average_line::after{width: 100%; display: inline-block; float: left; content: ""; border-top: 2px dashed rgba(116,116,150,0.5); position: absolute; top: 50%; left: 0; transform: translateY(1px);}
+.average_name{display: inline-block; float: left; font-size: 13px; font-weight: 700; color: rgba(116,116,150,0.5);}
+.graph_wrap{width: 100%; display: inline-block; float: left; position: relative; margin-top: 20px;}
+.graph_container{width: 100%; display: inline-block; float: left;}
+.graph_con{width: 12.5%; display: inline-block; float: left;}
+.graph_bar_wrap{width: 100%; display: inline-block; float: left; height: 200px; text-align: center; border-bottom: 1px solid rgba(116,116,150,0.1); margin-bottom: 10px;}
+.graph_bar_box{width: 15px; display: inline-block; height: 100%; border-top-left-radius: 10px; border-top-right-radius: 10px; background-color: rgba(116,116,150,0.1); position: relative;}
+.graph_bar{width: 100%; display: inline-block; float: left; border-top-left-radius: 10px; border-top-right-radius: 10px; position: absolute; bottom: 0; left: 0;}
+.graph_bar1{background-color: #fb9b50;}
+.graph_bar2{background-color: #03c75a;}
+.graph_bar3{background-color: #03c75a;}
+.graph_name{width: 100%; display: inline-block; float: left; font-size: 13px; text-align: center; font-weight: 700; color: #333; white-space: pre-line;}
+.average_bar_wrap{width: 100%; display: inline-block; float: left; height: 200px; position: absolute; top: 0; left: 0; z-index: 1;}
+.average_bar{width: 100%; display: inline-block; float: left; position: absolute; bottom: 65%; left: 0; transform: translateY(1px); border-top: 2px dashed rgba(116,116,150,0.5);}
+.graph_info_wrap{width: 100%; display: inline-block; float: left; text-align: center;}
+.graph_info_inner{display: inline-block; text-align: left; height: 15px;}
+.graph_info{height: 100%; display: inline-block; float: left; margin-right: 20px;}
+.graph_info:last-child{margin-right: 0;}
+.graph_info_color{width: 13px; height: 13px; display: inline-block; float: left; border-radius: 50%; margin-right: 5px;}
+.graph_info_color1{background-color: #fb9b50;}
+.graph_info_color2{background-color: #118dd8;}
+.graph_info_color3{background-color: #03c75a;}
+.graph_info_name{height: 100%; display: inline-block; float: left; line-height: 15px; font-size: 13px; font-weight: 700; color: #333;}
+.action_container{width: 100%; display: inline-block; float: left;}
+.action_con{width: calc(33.333% - 6.666px); display: inline-block; float: left; border-radius: 15px; background-color: #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); padding: 15px 0; margin-right: 10px;}
+.action_con:last-child{margin-right: 0;}
+.action_name{width: 100%; display: inline-block; float: left; font-size: 15px; font-weight: 700; text-align: center; margin-bottom: 7px;}
+.action_score{width: 100%; display: inline-block; float: left; font-size: 15px; font-weight: 900; text-align: center; margin-bottom: 10px;}
+.action_state{width: 100%; display: inline-block; float: left; height: 25px; text-align: center; margin-bottom: 10px;}
+.action_state span{height: 100%; display: inline-block; border-radius: 7px; padding: 0 10px; color: #fff; line-height: 25px; font-size: 13px; font-weight: 700;}
+.action_state1 span{background-color: #D11A21;}
+.action_state2 span{background-color: #fb9b50;}
+.action_state3 span{background-color: #118dd8;}
+.action_date{width: 100%; display: inline-block; float: left; text-align: center; font-size: 11px; color: #333; font-weight: 700;}*/
+
+.calendar_notice{width: 100%; display: inline-block; float: left; background-color: rgba(240,245,249,1); height: 30px; border-radius: 10px; text-align: center;}
+.calendar_notice_inner{display: inline-block; text-align: left; height: 100%;}
+.calendar_notice_img{width: 13px; display: inline-block; float: left; height: 100%; position: relative; margin-right: 5px;}
+.calendar_notice_img img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.calendar_notice_text{display: inline-block; float: left; height: 100%; line-height: 30px; font-size: 13px; font-weight: 700; color: #747496;}
+
+/*메인*/
+/*메인 정보요약*/
+.index_container_wrap{width: 100%; display: inline-block; float: left; padding-bottom: 116px;}
+.index_info_wrap{width: 100%; display: inline-block; float: left; padding: 0 15px;}
+.index_info_container{width: 100%; display: inline-block; float: left; background-color: #fff; padding: 12px 0; border-radius: 20px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.index_info_con{width: 50%; display: inline-block; float: left; height: 34px; border-right: 1px solid #e7eef9; text-align: center;}
+.index_info_con:last-child{border-right: 0;}
+.index_info_inner{display: inline-block; height: 100%;}
+.index_info_img{width: 23px; height: 100%; display: inline-block; float: left; margin-right: 12px; position: relative;}
+.index_info_img img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.index_info_textbox{display: inline-block; height: 100%; float: left; text-align: left;}
+.index_info_name{display: block; font-size: 11px; color: #747496; height: 11px; line-height: 11px;}
+.index_info_num{display: block; font-size: 16px; font-weight: 900; color: #11293c; height: 16px; line-height: 16px; margin-top: 7px; padding-left: 3px;}
+
+/*메인 받고있는 치료 / 먹고있는 약*/
+.index_item_wrap{width: 100%; display: inline-block; float: left; margin-top: 25px; padding: 0 15px;}
+.index_item_title_wrap{width: 100%; display: inline-block; float: left; margin-bottom: 10px;}
+.index_item_title{display: inline-block; float: left; height: 29px; line-height: 29px; /*border-radius: 17.5px; background-color: #11293c; color: #fff;*/ color: #11293c; font-size: 14px; /*padding: 0 15px;*/}
+.index_item_title span{font-weight: 900; margin-right: 2px;}
+.index_item_title_btn_wrap{display: inline-block; float: right;}
+.index_item_title_btn{display: inline-block; float: left; height: 29px; line-height: 29px; border-radius: 14.5px; color: #fff; font-size: 12px; font-weight: 700; padding: 0 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); margin-right: 7px;}
+.index_item_title_btn:last-child{margin-right: 0;}
+.index_item_wrap1 .index_item_title_btn{background-color: #01d3d5;}
+.index_item_wrap2 .index_item_title_btn{background-color: #703fbd;}
+.index_item_wrap2 .index_item_title_btn2{background-color: #BA0000;}
+
+.index_item_container{width: 100%; display: inline-block; float: left;}
+.index_item_con{width: calc(50% - 5px); display: inline-block; float: left; background: #fff; border-radius: 20px;  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); margin-right: 10px; margin-top: 10px;}
+.index_item_con:nth-child(2n){margin-right: 0;}
+.index_item_con:nth-child(1), .index_item_con:nth-child(2){margin-top: 0;}
+.index_item_icon_wrap{width: 100%; display: inline-block; float: left; margin: 12px 0 10px 0; padding: 0 13px; height: 19px;}
+.index_item_icon{width: 19px; height: 100%; display: inline-block; float: left;}
+.index_item_icon img{width: 100%; float: left;}
+.index_item_con img.index_item_icon_on{display: none;}
+.index_item_con img.index_item_icon_off{display: inline-block;}
+.index_item_btn{width: 7px; display: inline-block; float: right; height: 100%; position: relative;}
+.index_item_btn img{width: 100%; float: left; position: absolute; top: 50%; right: 0; transform: translateY(-50%);}
+.index_item_con img.index_item_btn_on{display: none;}
+.index_item_con img.index_item_btn_off{display: inline-block;}
+.index_item_name{width: 100%; display: inline-block; float: left; padding: 0 13px; font-size: 14px; height: 14px; line-height: 14px; margin-bottom: 7px; font-weight: 900; color: #11293c;}
+.index_item_location{width: 100%; display: inline-block; float: left; padding: 0 13px; font-size: 12px; height: 12px; line-height: 12px; margin-bottom: 12px; color: #747496;}
+.index_item_wrap1 .index_item_con_on{background: linear-gradient(150deg, #01d3d5, #02b4cc)!important;}
+.index_item_wrap2 .index_item_con_on{background: linear-gradient(150deg, #9F65FB, #6835ba)!important;}
+.index_item_con_on img.index_item_icon_on{display: inline-block!important;}
+.index_item_con_on img.index_item_icon_off{display: none!important;}
+.index_item_con_on img.index_item_btn_on{display: inline-block!important;}
+.index_item_con_on img.index_item_btn_off{display: none!important;}
+.index_item_con_on .index_item_name, .index_item_con_on .index_item_location, .index_item_con_on .index_item_toggle_name{color: #fff;}
+
+/*메인 발달기능 평과결과*/
+.index_graph_wrap{width: 100%; display: inline-block; float: left; background-color: #fff; border-radius: 20px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); padding: 15px;}
+.index_graph_top{width: 100%; display: inline-block; float: left; height: 15px; margin-bottom: 20px;}
+.index_graph_arrow{width: 30px; display: inline-block; float: left;  height: 100%; position: relative;}
+.index_graph_date{width: calc(100% - 60px); display: inline-block; float: left; text-align: center; font-size: 13px; height: 100%; font-weight: 900; line-height: 15px;}
+.index_graph_arrow img{width: 7px; display: inline-block; float: left; position: absolute; top: 50%; transform: translateY(-50%);}
+.index_graph_prev img{left: 0;}
+.index_graph_next img{right: 0;}
+.index_graph_container{width: 100%; display: inline-block; float: left;}
+.index_graph_con{width: 12.5%; display: inline-block; float: left;}
+.index_graph_box{width: 100%; display: inline-block; float: left; height: 200px; text-align: center; border-bottom: 1px solid #e7eef9; margin-bottom: 10px;}
+.index_graph_inner{width: 10px; display: inline-block; height: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px; background-color: #e7eef9; position: relative;}
+.index_graph_bar{width: 100%; display: inline-block; float: left; border-top-left-radius: 5px; border-top-right-radius: 5px; position: absolute; bottom: 0; left: 0;}
+.index_graph_bar1{background: linear-gradient(0deg, #01d3d5, #02b4cc);}
+.index_graph_bar2{background: linear-gradient(0deg, #fcb02a, #fe8531);}
+.index_graph_name{width: 100%; display: inline-block; float: left; white-space: pre-line; line-height: 140%; text-align: center; font-size: 12px; font-weight: 700;}
+
+/*메인 도전행동 평가결과*/
+.index_graph_info_wrap{display: inline-block; float: right;}
+.index_graph_info{display: inline-block; float: left; height: 29px; margin-right: 10px;}
+.index_graph_info:last-child{margin-right: 0;}
+.index_graph_info_bar{width: 11px; display: inline-block; float: left; position: relative; height: 100%; margin-right: 5px;}
+.index_graph_info_bar::after{content: ""; width: 100%; display: inline-block; float: left; height: 11px; border-radius: 2px; position: absolute; bottom: 1px; left: 0;}
+.index_graph_info_bar1::after{background-color: #02b4cc;}
+.index_graph_info_bar2::after{background-color: #fe8531;}
+.index_graph_info_name{display: inline-block; float: left; height: 100%; line-height: 47px; font-size: 12px; font-weight: 700;}
+.index_action_container{width: 100%; display: inline-block; float: left; margin-bottom: 10px;}
+.index_action_con{width: calc(33.333% - 6.666px); display: inline-block; float: left; background-color: #fff; border-radius: 20px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); padding: 15px; margin-right: 10px;}
+.index_action_con:last-child{margin-right: 0;}
+.index_action_name{width: 100%; display: inline-block; float: left; font-size: 13px; font-weight: 900; height: 13px; line-height: 13px; margin-bottom: 10px; text-align: center;}
+.index_action_score_wrap{width: 100%; display: inline-block; float: left; margin-bottom: 10px;}
+.index_action_score{width: 100%; display: inline-block; float: left; height: 20px; line-height: 20px; font-size: 13px; text-align: center; border-radius: 5px; color: #fff; font-weight: 700; margin-bottom: 5px;}
+.index_action_score:last-child{margin-bottom: 0;}
+.index_action_score1{background-color: #02b4cc;}
+.index_action_score2{background-color: #fe8531;}
+.index_action_date{width: 100%; display: inline-block; float: left; font-size: 12px; text-align: center; height: 12px; line-height: 12px; color: #747496;}
+.index_action_graph_container{width: 100%; display: inline-block; float: left;}
+.index_action_graph_con{width: 33.333%; display: inline-block; float: left;}
+.index_action_graph_box{width: 100%; display: inline-block; float: left; height: 200px; text-align: center; border-bottom: 1px solid #e7eef9; margin-bottom: 10px;}
+.index_action_graph_inner{width: 30px; display: inline-block; height: 100%; position: relative;}
+.index_action_graph_bar{width: 10px; height: 100%; display: inline-block; float: left; border-top-left-radius: 5px; border-top-right-radius: 5px; background-color: #e7eef9; position: absolute; bottom: 0;}
+.index_action_graph_bar1{left: 0;}
+.index_action_graph_bar2{right: 0;}
+.index_action_graph_bar span{width: 100%; display: inline-block; float: left; border-top-left-radius: 5px; border-top-right-radius: 5px; position: absolute; bottom: 0; left: 0;}
+.index_action_graph_bar1 span{background-color: #02b4cc;}
+.index_action_graph_bar2 span{background-color: #fe8531;}
+.index_action_graph_name{width: 100%; display: inline-block; float: left; white-space: pre-line; line-height: 140%; text-align: center; font-size: 12px; font-weight: 700;}
+	
+
+
+
+
+
+/*약물치료 정보*/
+.input_wrap{width: 100%; display: inline-block; float: left;}
+.input_title{width: 100%; display: inline-block; float: left; font-size: 17px; font-weight: 700; color: #11293c; margin-bottom: 15px; line-height: 140%; white-space: pre-line;}
+.input_title span{color: #11293c; font-weight: 900; display: inline-block; margin-right: 3px;}
+.input_container{width: 100%; display: inline-block; float: left;}
+.input_con{width: 100%; display: inline-block; float: left; margin-bottom: 15px;}
+.input_con:last-child{margin-bottom: 0;}
+.input_name{width: 100%; display: inline-block; float: left; font-size: 12px; font-weight: 700; color: #333; margin-bottom: 5px;}
+.input_notice{display: inline-block; float: right; color: #D11A21;}
+.input_box{width: 100%; display: inline-block; float: left;}
+.input_box input{width: 100%; display: inline-block; float: left; border: 0; border-radius: 10px; background-color: #fff; padding: 0 10px; font-size: 13px; height: 50px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.input_box1 input{background-color: #fff; border: 0; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.input_option{width: 100%; display: inline-block; float: left;}
+.input_option .input_box{width: calc(100% - 55px); margin-right: 5px;}
+.input_option_btn{width: 50px; display: inline-block; float: left; height: 100%; line-height: 50px; text-align: center; border-radius: 10px; font-size: 13px; font-weight: 700; background-color: #11293c; color: #fff;}
+.input_date{width: 100%; display: inline-block; float: left; position: relative; background-color: #fff; height: 50px; border-radius: 10px;}
+.input_date .input_box{position: absolute; top: 0; left: 0; z-index: 1;}
+.input_date .input_box input{background-color: transparent;}
+.input_date_img{width: 50px; height: 50px; display: inline-block; float: right; position: relative;}
+.input_date_img img{width: 19px; display: inline-block; float: left; position: absolute; top: 50%; right: 12px; transform: translateY(-50%);}
+.input_time{width: 100%; display: inline-block; float: left;}
+.time_division, .time_hour, .time_minute{width: calc(33.333% - 3.333px); display: inline-block; float: left; margin-right: 5px; height: 45px; font-size: 13px; text-align: center; border: 1px solid #ddd; border-radius: 7px; overflow: hidden;}
+.time_minute{margin-right: 0;}
+.input_day{width: 100%; display: inline-block; float: left;}
+.day{width: calc(14.285714% - 4.285714px); display: inline-block; float: left; height: 50px; border-radius: 10px; line-height: 50px; text-align: center; font-size: 13px; margin-right: 5px; cursor: pointer; background-color: #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); color: #999;}
+.day:last-child{margin-right: 0;}
+.day_on{background-color: #11293c; color: #fff; font-weight: 700;}
+.input_btn_wrap{width: 100%; display: inline-block; float: left; max-width: 800px; position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); z-index: 9; background-color: #fff; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 15px 15px 25px 15px;}
+.input_btn{width: 100%; display: inline-block; float: left; background-color: #fff; height: 50px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); background-color: #01d3d5; color: #fff; font-size: 14px; font-weight: 700; text-align: center; line-height: 50px; cursor: pointer; margin-bottom: 10px;}
+.input_btn:last-child{margin-bottom: 0;}
+.input_btn span{font-weight: 900;}
+/*약 검색*/
+.search_wrap{width: 100%; display: inline-block; float: left;}
+.search_input_wrap{width: 100%; display: inline-block; float: left; border-radius: 10px; background-color: #fff; height: 50px; margin-bottom: 20px;}
+.search_box{width: calc(100% - 50px); display: inline-block; float: left; height: 100%;}
+.search_box input{width: 100%; height: 100%; display: inline-block; float: left; padding: 0 15px; border: 0; background-color: transparent; font-size: 15px;}
+.search_btn{width: 50px; height: 50px; display: inline-block; float: left; position: relative; cursor: pointer;}
+.search_btn img{width: 19px; display: inline-block; float: left; position: absolute; top: 50%; right: 15px; transform: translateY(-50%);}
+.search_result{width: 100%; display: inline-block; float: left; font-size: 13px; font-weight: 700; margin-bottom: 10px;}
+.search_result span{color: #D11A21; font-weight: 900;}
+.search_list_container{width: 100%; display: inline-block; float: left;}
+.search_list_con{width: 100%; display: inline-block; float: left; background-color: #fff; border-radius: 15px; margin-bottom: 10px; padding: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); cursor: pointer;}
+.search_list_con:last-child{margin-bottom: 0;}
+.drug_info_img{width: 70px; height: 70px; display: inline-block; float: left; border-radius: 10px; overflow: hidden;}
+.drug_info_img img{width: 100%; height: 100%; display: inline-block; float: left; object-fit: cover;}
+.drug_info_box{width: calc(100% - 70px); display: inline-block; float: left; padding: 5px 0 5px 10px;}
+.drug_info_name{width: 100%; display: inline-block; float: left; font-size: 15px; font-weight: 700; color: #333; margin-bottom: 7px; height: 15px; line-height: 15px;}
+.drug_info_sub{width: 100%; display: inline-block; float: left; font-size: 13px; color: #666; height: 13px; line-height: 140%;}
+
+
+/*로그인*/
+.login_container_wrap{padding: 30px 0;}
+.login_container{width: 100%; display: flex; justify-content: center; align-items: center; height: 100%; min-height: 100vh;}
+.login_wrap{width: 100%; display: inline-block; float: left; max-width: 400px;}
+.login_logo_wrap{width: 100%; display: inline-block; float: left; margin-bottom: 20px;}
+.login_logo{width: 100%; display: inline-block; float: left; text-align: center;}
+.login_logo_wrap img{width: 165px; display: inline-block;}
+.check_wrap{width: 100%; display: inline-block; float: left; margin: 10px 0 7px 0; height: 20px;}
+.check_left{height: 100%; display: inline-block; float: left;}
+.check_right{height: 100%; display: inline-block; float: right;}
+.checkbox_wrap{height: 100%; display: inline-block; float: left;}
+#check{display: none;}
+.checkbox_wrap label{height: 100%; display: inline-block; float: left;}
+.check_img_wrap{width: 17px; height: 17px; display: inline-block; float: left; margin-right: 5px;}
+.check_img{width: 100%; height: 100%; float: left;}
+.check_img_off{display: inline-block;}
+.check_img_on{display: none;}
+.check_img img{width: 100%; height: 100%; display: inline-block; float: left;}
+.check_name{height: 100%; display: inline-block; float: left; line-height: 17px; font-size: 12px; font-weight: 700; color: #999;}
+#check:checked ~ label .check_img_off{display: none;}
+#check:checked ~ label .check_img_on{display: inline-block;}
+#check:checked ~ label .check_name{color: #118dd8;}
+.find_account{height: 100%; display: inline-block; float: left; line-height: 17px; font-size: 12px; font-weight: 700; color: #999;}
+.login_btn_wrap{width: 100%; display: inline-block; float: left;}
+.signup_btn{background-color: transparent; border: 1px solid #ddd; color: #ababab; box-shadow: unset; font-size: 13px; font-weight: 500;}
+.social_btn_wrap{width: 100%; display: inline-block; float: left; padding-top: 15px; margin-top: 15px; border-top: 1px solid #eee;}
+.sns_btn{background-color: #fff; color: #11293c; font-size: 13px;}
+.input_btn img{width: 21px; display: inline-block; margin-right: 10px;}
+
+/*회원가입*/
+.input_tab_wrap{width: 100%; display: inline-block; float: left;}
+.input_tab{width: calc(50% - 5px); display: inline-block; float: left; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); background-color: #fff; color: #999; padding: 0 5px; font-size: 13px; height: 50px; margin-right: 10px; text-align: center; line-height: 50px; cursor: pointer;}
+.input_tab:last-child{margin-right: 0;}
+.input_tab_on{background-color: #01d3d5; color: #fff; font-weight: 700;}
+.input_type_tab_wrap{width: 100%; display: inline-block; float: left;}
+.input_type_tab{width: calc(50% - 5px); display: inline-block; float: left; border-radius: 10px; background-color: #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); color: #999; padding: 0 5px; font-size: 13px; height: 50px; margin-right: 10px; text-align: center; line-height: 50px; cursor: pointer; margin-top: 10px;}
+.input_type_tab:nth-child(2n){margin-right: 0;}
+.input_type_tab:nth-child(1), .input_type_tab:nth-child(2){margin-top: 0;}
+.input_type_tab_on1{background-color: #11293c; color: #fff; font-weight: 700;}
+.input_type_tab_on2{background-color: #BA0000; color: #fff; font-weight: 700;}
+.input_type_text{width: 100%; display: none; float: left; margin-top: 10px;}
+.input_type_text input{width: 100%; display: inline-block; float: left; border-radius: 10px; background-color: #fff; padding: 0 10px; font-size: 14px; height: 50px; line-height: 50px; text-align: center; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); border: 0;}
+.input_type_text_on{display: inline-block;}
+.input_phone{width: 100%; display: inline-block; float: left; margin-bottom: 10px;}
+.input_phone .input_box{width: calc(100% - 90px);}
+.input_phone_btn{width: 80px; display: inline-block; float: left; border-radius: 10px; background-color: #11293c; color: #fff; font-weight: 700; text-align: center; height: 50px; line-height: 50px; font-size: 13px; margin-left: 10px; cursor: pointer; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.input_error{width: 100%; display: inline-block; float: left; font-size: 11px; color: #D11A21; margin-top: 5px; font-weight: 700;}
+.error_input_box input{border-color: #D11A21;}
+
+.input_title_sub{width: 100%; display: inline-block; float: left; font-size: 13px; font-weight: 700; color: #999; margin-bottom: 15px; line-height: 140%; white-space: pre-line;}
+.input_select_wrap{width: 100%; display: inline-block; float: left; position: relative;}
+.input_select_box{width: 100%; display: inline-block; float: left; border: 0; border-radius: 10px; height: 50px; line-height: 50px; font-size: 13px; cursor: pointer; padding: 0 15px 0 10px; position: relative; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); background-color: #fff;}
+.input_select_box img{width: 11px; display: inline-block; float: left; position: absolute; top: 50%; right: 10px; transform: translateY(-50%);}
+.input_select_box img.rotate180{transform: translateY(-50%) rotate(180deg);}
+.input_select_option_wrap{width: 100%; display: inline-block; float: left; height: 200px; border-radius: 10px; background-color: #fff; position: absolute; top: 55px; left: 0; z-index: 2; overflow-y: scroll; display: none; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.input_select_option_wrap::-webkit-scrollbar{display: none;}
+.input_select_option{width: 100%; display: inline-block; float: left; height: 45px; line-height: 45px; font-size: 13px; text-align: center; cursor: pointer;}
+.input_select_option:nth-child(2n){background-color: rgba(240,245,249,0.5);}
+.input_textbox{display: none; margin-top: 10px;}
+.two_input_btn_wrap .input_btn{width: calc(50% - 5px); margin-right: 10px;}
+.input_btn:last-child{margin-right: 0;}
+.input_tag{width: 100%; display: inline-block; float: left; font-size: 13px; font-weight: 900; color: #11293c; position: relative;}
+.add_input_container{margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd;}
+.add_input_container:last-child{margin-bottom: 0; padding-bottom: 0; border-bottom: 0;}
+.full_popup_btn_wrap .popup_btn{width: 100%;}
+.find_input_tab_wrap{margin-bottom: 15px;}
+.find_id_input_btn, .find_pw_input_btn, .new_pw_input_btn, .link_input_btn, .add_input_btn{margin-bottom: 0;}
+.input_del{width: 17px; display: inline-block; float: left; position: absolute; top: 0; right: 0; cursor: pointer;}
+.input_del img{width: 100%; display: inline-block; float: left;}
+
+/*입력정보 보기*/	
+.input_view{width: 100%; display: inline-block; float: left; height: 50px; line-height: 50px; font-size: 13px; padding: 0 10px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.memo_container{width: 100%; display: inline-block; float: left;}
+.memo_con{width: 100%; display: inline-block; float: left; margin-bottom: 10px; padding: 10px; border-radius: 10px; background-color: #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.memo_con:last-child{margin-bottom: 0;}
+.memo_img_wrap{width: 100%; display: inline-block; float: left; margin-bottom: 15px;}
+.memo_img{width: calc(20% - 8px); display: inline-block; float: left; height: 8vh; border-radius: 5px; overflow: hidden; margin-right: 10px;}
+.memo_img:last-child{margin-right: 0;}
+.memo_img img{width: 100%; height: 100%; display: inline-block; float: left; object-fit: cover;}
+.memo_sub{width: 100%; display: inline-block; float: left; line-height: 160%; font-size: 13px; white-space: pre-line; margin-bottom: 10px;}
+.memo_date{width: 100%; display: inline-block; float: left; font-size: 13px; color: #666;}
+.input_btn img{height: 20px; display: inline-block; margin-right: 10px; margin-bottom: 2px;}
+.input_slide_container{width: 100%; display: inline-block; float: left; position: relative; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.input_slide_con{width: 100%; display: inline-block; float: left; height: 35vh;}
+.input_view_text{width: 100%; display: inline-block; float: left; font-size: 13px; line-height: 160%; white-space: pre-line; background-color: #fff; border-radius: 10px; padding: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.memo_tag{position: relative; padding-left: 10px; margin-left: 10px;}
+.memo_tag::before{content: ""; width: 1.5px; display: inline-block; float: left; height: 9px; background-color: #ccc; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.input_img{width: 100%; height: 60vh; display: inline-block; float: left; border-radius: 7px; overflow: hidden;}
+.input_img img{width: 100%; height: 100%; display: inline-block; float: left; object-fit: cover;}
+
+.input_img{width: 150px; height: 150px; display: inline-block; float: left; border-radius: 7px; overflow: hidden;}
+.input_img img{width: 100%; height: 100%; display: inline-block; float: left; object-fit: cover;}
+
+.memo_slide_wrap{width: 100%; display: flex; flex-wrap: wrap; float: left;}
+.memo_slide_upload{width: 30%; display: inline-block; float: left; height: 15vh; border: 2px solid #fff; border-radius: 10px; overflow: hidden; position: relative; background-color: #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.memo_slide_upload input{width: 100%; height: 100%; display: inline-block; float: left; position: absolute; top: 0; left: 0; z-index: 2; opacity: 0; cursor: pointer;}
+.upload_img{width: 100%; height: 100%; display: inline-block; float: left; position: absolute; top: 0; left: 0;}
+.upload_img img{width: 21px; display: inline-block; float: left; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.memo_slide_view_wrap{width: 70%; display: inline-block; float: left; height: 15vh; padding-left: 10px;}
+.memo_slide_view_img{width: 100%; height: 100%; display: inline-block; float: left; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.del_img{width: 19px; height: 19px; display: inline-block; float: left; position: absolute; top: 7px; right: 7px; cursor: pointer;}
+.input_textarea{width: 100%; display: inline-block; float: left;}
+.input_textarea textarea{width: 100%; height: 200px; display: inline-block; float: left; background-color: #fff; border-radius: 10px; font-size: 13px; padding: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); border: 0; resize: none;}
+.input_textarea textarea::-webkit-scrollbar{display: none;}
+
+/*약물부작용 기록*/
+.input_btn_inner{width: 100%; display: inline-block; float: left;}
+.search_input_btn{width: calc(100% - 60px); margin-bottom: 0;}
+.reset_btn{width: 50px; margin-left: 10px; position: relative; background-color: #11293c;}
+.reset_btn img{width: 19px; display: inline-block; float: left; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.drug_error_wrap{width: 100%; display: inline-block; float: left;}
+.drug_error{width: 100%; display: inline-block; float: left;  border-radius: 10px; padding-bottom: 10px; background-color: #fff; margin-bottom: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.drug_error:last-child{margin-bottom: 0;}
+.drug_error_top{width: 100%; display: inline-block; float: left; background-color: #fff; padding: 12px 10px 10px 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;}
+.drug_error_date{width: calc(100% - 20px); display: inline-block; float: left; height: 13px; font-size: 13px; line-height: 13px; font-weight: 700; color: #000;}
+.drug_error_btn{width: 20px; display: inline-block; float: left; height: 13px; position: relative;}
+.drug_error_btn img{width: 17px; display: inline-block; float: left; position: absolute; top: 50%; right: 0; transform: translateY(-50%);}
+.drug_error_tab_wrap{width: 100%; display: inline-block; float: left; margin-bottom: 5px; padding: 0 10px;}
+.drug_error_tab{display: inline-block; float: left; height: 25px; line-height: 25px; font-size: 13px; border-radius: 5px; margin-right: 5px; background-color: #747496; color: #fff; font-weight: 700; padding: 0 10px; margin-bottom: 5px;}
+.drug_error_tab1{background-color: #11293c;}
+.drug_error_tab2{background-color: #BA0000;}
+.drug_error_sub{width: 100%; display: inline-block; float: left; font-size: 13px; line-height: 160%; white-space: pre-line; color: #333; padding: 0 10px;}
+.detail_search_wrap{width: 100%; display: inline-block; float: left; position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 9; max-width: 800px; background-image: linear-gradient(180deg, rgba(255,255,255,0), #fff); padding-top: 20px; overflow: hidden;}
+.detail_search_btn_wrap{width: 100%; display: inline-block; float: left; border-top: 1px solid #eee; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); height: 40px; border-top-left-radius: 30px; border-top-right-radius: 30px; text-align: center; background-color: #fff; border-top: 2px solid #11293c; cursor: pointer;}
+.detail_search_btn{display: inline-block; height: 100%; line-height: 40px; font-size: 13px; font-weight: 900; color: #333;}
+.detail_search_btn img{width: 9px; display: inline-block; margin-left: 5px; position: relative; transform: rotateX(180deg);}
+.detail_search_inner{width: 100%; display: inline-block; float: left; background-color: #fff; position: relative; z-index: 1; height: 0; overflow: hidden; padding: 0;}
+.search_date_wrap{width: 100%; display: inline-block; float: left;}
+.search_date{width: calc(50% - 5px); display: inline-block; float: left; height: 45px; line-height: 43px; border: 1px solid #ddd; border-radius: 7px; font-size: 13px; background-color: #fff; position: relative; margin-right: 10px;}
+.search_date:last-child{margin-right: 0;}
+.search_date input{width: 100%;  height: 100%; display: inline-block; float: left; background-color: transparent; border: 0; position: absolute; top: 0; left: 0; z-index: 1; padding: 0 10px; cursor: pointer;}
+.calendar_img{width: 43px; height: 100%; display: inline-block; float: right; position: relative;}
+.calendar_img img{width: 19px; display: inline-block; float: left; position: absolute; top: 50%; right: 12px; transform: translateY(-50%);}
+.search_tag_wrap{width: 100%; display: inline-block; float: left; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;}
+.search_tag{width: calc(33.333% - 6.666px); display: inline-block;  float: left; height: 45px; line-height: 43px; border: 1px solid #ddd; border-radius: 7px; text-align: center;  font-size: 13px; margin-right: 10px; margin-top: 10px; cursor: pointer; background-color: #fff;}
+.search_tag:nth-child(3n){margin-right: 0;}
+.search_tag_on{background-color: #11293c; border-color: #11293c; color: #fff; font-weight: 700;}
+.detail_search_wrap_on .detail_search_btn img{transform: rotateX(0);}
+.detail_search_wrap_on .detail_search_inner{padding: 10px 15px 15px 15px; height: unset;}
+
+/*발달평가*/
+.develop_wrap{width: 100%; display: inline-block; float: left;}
+.develop_main_title{width: 100%; display: inline-block; float: left; color: #11293c; font-size: 17px; margin-bottom: 3px; font-weight: 900;}
+.develop_sub_title{width: 100%; display: inline-block; float: left; color: #666; font-size: 13px;}
+.develop_container{width: 100%; display: flex; flex-wrap: wrap; float: left; padding-top: 15px;}
+.develop_con{width: calc(50% - 5px); display: inline-block; float: left; border-radius: 10px; background-color: #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); padding: 12px 5px; margin-right: 10px; margin-bottom: 10px;}
+.develop_con_finish{background-color: #fff;}
+.develop_con_recommend{background-color: #11293c;}
+.develop_con_start{background-color: #eee;}
+.develop_con:nth-child(2n){margin-right: 0;}
+.develop_name{width: 100%; display: inline-block; float: left; font-size: 14px; height: 14px; line-height: 14px; font-weight: 700; text-align: center; margin-bottom: 10px; color: #11293c;}
+.develop_score{width: 100%; display: inline-block; float: left; font-size: 16px; height: 16px; font-weight: 900; line-height: 16px; text-align: center; margin-bottom: 10px; color: #11293c;}
+.develop_level{width: 100%; display: inline-block; float: left; font-size: 12px; height: 12px; line-height: 12px; text-align: center; font-weight: 700; color: #999; margin-bottom: 7px;}
+.develop_state{width: 100%; display: inline-block; float: left; font-size: 12px; height: 12px; line-height: 12px; text-align: center; font-weight: 700; color: #999;}
+.develop_con_recommend span{color: #eee!important;}
+.develop_con_start span{color: #666!important;}
+.develop_score_low span{color: #fb9b50!important;}
+/*.develop_score_mid span{color: #118dd8;}*/
+.develop_score_high span{color: #01d3d5!important;}
+.graph_con_none .graph_name{color: #999;}
+.develop_history_wrap{width: 100%; display: inline-block; float: left; margin-top: 15px;}
+.develop_history{width: calc(25% - 7.5px); display: inline-block; float: left; padding: 15px 5px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); background-color: #fff; border-radius: 15px; margin-right: 10px;  margin-top: 10px;}
+.develop_history:nth-child(4n){margin-right: 0;}
+.develop_history_img{width: 100%; display: inline-block; float: left; text-align: center; margin-bottom: 5px;}
+.develop_history_img img{width: 23px; display: inline-block;}
+.develop_history_text{width: 100%; display: inline-block; float: left; text-align: center; font-size: 13px; font-weight: 700; color: #747496;}
+
+.test_tab_wrap{width: 100%; display: inline-block; float: left; padding: 0 15px; overflow: hidden; margin-bottom: 15px;}
+.test_tab_wrap .main_title span{color: #11293c;}
+.test_tab{width: 100%; display: inline-block; float: left; border-radius: 10px; border: 1px solid #ddd; text-align: center; height: 50px; line-height: 48px; font-size: 13px; color: #999; font-weight: 700; cursor: pointer;}
+.test_tab_on{background-color: #11293c; color: #fff; border-color: #11293c;}
+.test_wrap{width: 100%; display: inline-block; float: left;}
+.test_type_wrap{width: 100%; display: inline-block; float: left; margin-bottom: 10px;}
+.test_type_prev, .test_type_next{width: 30px; display: inline-block; float: left; height: 30px; border-radius: 10px; background-color: #11293c; position: relative; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); cursor: pointer;}
+.test_type_prev img, .test_type_next img{width: 6px; display: inline-block; float: left; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.test_type_title{width: calc(100% - 60px); display: inline-block; float: left; height: 30px; line-height: 30px; font-size: 14px; padding: 0 10px; font-weight: 900; color: #333; text-align: center;}
+.test_state_wrap{width: 100%; display: inline-block; float: left; background-color: #fff; border-radius: 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); border: 2px solid #11293c; padding: 11px 14px 16px 14px; margin-bottom: 15px;}
+.test_state_title{width: 100%; display: inline-block; float: left; font-size: 14px; font-weight: 900; line-height: 150%;  margin-bottom: 10px; white-space: pre-line;}
+.state_box, .state_num{padding: 0 7px; display: inline-block; margin-right: 5px; height: 23px; border-radius: 5px; color: #fff; line-height: 23px; font-size: 13px; margin-bottom: 2px;}
+.none_box, .none_num, .none_bar, .none_bar span{background-color: #999;}
+.low_box, .low_num, .low_bar, .low_bar span{background-color: #fb9b50;}
+.mid_box, .mid_num, .mid_bar, .mid_bar span{background-color: #01d3d5;}
+.high_box, .high_num, .high_bar, .high_bar span{background-color: #03c75a;} 
+.test_state_bar_wrap{width: 100%; display: inline-block; float: left; padding-top: 30px;}
+.test_state_bar_level{width: 20px; display: inline-block; float: left; height: 20px; line-height: 20px; font-size: 13px; font-weight: 900; color: #666;}
+.test_state_bar_level img{width: 100%; height: 100%; display: inline-block; float: left;}
+.low_lebel{text-align: left;}
+.high_level{text-align: right;}
+.test_state_bar_box_wrap{width: calc(100% - 50px); display: inline-block; float: left; padding: 2px 0; height: 20px; margin: 0 5px;}
+.test_state_bar_box{width: 100%; display: inline-block; float: left; height: 100%; background-color: rgba(116,116,150,0.1); border-radius: 8px;}
+.test_state_bar{display: inline-block; float: left; height: 100%; border-radius: 8px; position: relative;}
+.test_state_bar_num{width: 40px;  text-align: center; display: inline-block; float: left; height: 22px; line-height: 22px; border-radius: 5px; color: #fff; font-weight: 900; font-size: 13px; position: absolute; top: -30px; right: 0; transform: translateX(20px);}
+.test_state_bar_num::before{content: ""; width: 0; height: 0; display: inline-block; float: left; border-bottom: 5px solid transparent; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid transparent; position: absolute; bottom: -9px; left: 50%; transform: translateX(-50%);}
+.none_bar span::before{border-top-color: #999;}
+.low_bar span::before{border-top-color: #fb9b50;}
+.mid_bar span::before{border-top-color: #01d3d5;}
+.high_bar span::before{border-top-color: #03c75a;}
+.test_state_level_box_wrap{width: 100%; display: inline-block; float: left; margin-top: 13px;}
+.test_state_level_box{width: calc(33.333% - 4.666px); display: inline-block; float: left; border-radius: 5px;  background-color: #fff; margin-right: 7px; margin-top: 7px; padding: 5px 0; text-align: center; font-size: 13px; font-weight: 600; border: 1px solid #eee;}
+.test_state_level_box:last-child{margin-right: 0;}
+.test_state_level_box_on_low{background-color: #fb9b50; color: #fff;}
+.test_state_level_box_on_mid{background-color: #01d3d5; color: #fff;}
+.test_state_level_box_on_high{background-color: #03c75a; color: #fff;}
+
+.test_question_container{width: 100%; display: inline-block; float: left; padding-top: 15px; border-top: 1px solid #eee;}
+.test_question_con{width: 100%; display: inline-block; float: left; background-color: #fff; padding: 15px 20px 20px 20px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); border-radius: 15px; margin-bottom: 15px;}
+.test_question_con:last-child{margin-bottom: 0;}
+.test_question_title{width: 100%; display: inline-block; float: left; font-size: 15px; white-space: pre-line; line-height: 160%; font-weight: 700; margin-bottom: 15px;}
+.test_question_option_wrap{width: 100%; display: inline-block; float: left;}
+.test_question_option{width: 100%; display: inline-block;  float: left; height: 50px; border: 1px solid #ddd; border-radius: 15px; background-color: #fff; padding: 0 12px; margin-bottom: 7px; cursor: pointer;}
+.test_question_option:last-child{margin-bottom: 0;}
+.test_question_option_img{width: 25px; height: 100%; display: inline-block; float: left; position: relative;}
+.test_question_option_img img{width: 100%; display: inline-block;  float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.test_question_option_text{width: calc(100% - 25px); display: inline-block; float: left;  height: 100%; line-height: 48px; font-size: 13px; font-weight: 700; color: #333; padding-left: 10px;}
+.test_question_option_on{background-color: #01d3d5!important; border-color: #01d3d5!important;}
+.test_question_option_on .test_question_option_text{color: #fff!important;}
+
+.test_btn_wrap{width: 100%; display: inline-block; float: left; background-color: #fff; padding: 0 15px;margin-top: 15px;}
+.test_btn{width: 100%; display: inline-block; float: left; height: 50px; border-radius: 7px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); background-color: #118dd8; color: #fff; font-size: 15px; font-weight: 700; text-align: center; line-height: 50px;}
+
+.graph_btn_none{background-color: #999;}
+.history_graph_wrap{width: 100%; display: flex; flex-wrap: wrap; float: left;}
+.history_graph_score_wrap{width: 25px; display: inline-block; float: left;}
+.history_graph_score{width: 100%; display: inline-block; float: left;}
+.score{width: 100%; height: 30px; display: inline-block; float: left; border-right: 1px solid #747496; font-size: 13px; font-weight: 700; text-align: right; padding-right: 10px; color: #747496; line-height: 60px; position: relative;}
+.score::after{content: ""; width: 5px; height: 1px; display: inline-block; float: left; background-color: #747496; position: absolute; bottom: 0; right: 0;}
+.last_score, .none_score{border-right: 0;}
+.none_score::after{display: none;}
+.history_graph_container{width: calc(100% - 25px); display: inline-block; float: left;}
+.history_graph_con{width: 25%; display: inline-block; float: left; height: 100%;}
+.history_graph_bar_wrap{width: 100%; height: calc(100% - 30px); display: inline-block; float: left; border-bottom: 1px solid #747496; position: relative;}
+.history_graph_bar{width: 50%; display: inline-block; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-top-left-radius: 5px; border-top-right-radius: 5px;}
+/*.history_graph_bar_low{background-color: #fb9b50;}
+.history_graph_bar_mid{background-color: #118dd8;}
+.history_graph_bar_high{background-color: #03c75a;}*/
+.history_graph_bar_mid{background: linear-gradient(0deg, #01d3d5, #02b4cc);}
+.history_graph_bar_low{background: linear-gradient(0deg, #fcb02a, #fe8531);}
+.history_graph_date{width: 100%; display: inline-block; float: left; text-align: center; font-size: 13px; color: #666; line-height: 30px; height: 30px; font-weight: 700;}
+
+.history_test_wrap{width: 100%; display: inline-block; float: left; margin-top: 25px; padding-top: 25px; border-top: 1px solid #fff;}
+.history_test_title{width: 100%; display: inline-block; float: left; font-weight: 900; font-size: 15px; margin-bottom: 3px; color: #11293c;}
+.history_test_notice{width: 100%; display: inline-block; float: left; font-size: 13px; color: #666;}
+.history_test_container{width: 100%; display: inline-block; float: left; padding-top: 15px;}
+.history_test_con{width: 100%; display: inline-block; float: left; background-color: #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 12px 10px; font-size: 13px; font-weight: 700; margin-bottom: 10px;}
+.history_test_con:last-child{margin-bottom: 0;}
+.history_test_more_wrap{width: 100%; display: inline-block; float: left; margin-top: 20px;}
+.history_test_more_btn{width: 100%; display: inline-block; border-radius: 10px; border: 1px solid #ccc; height: 50px; line-height: 50px; text-align: center; font-size: 13px; font-weight: 700; color: #999; cursor: pointer;}
+
+/*마이페이지*/
+.mypage_wrap{width: 100%; display: inline-block; float: left;}
+.mypage_info_wrap{width: 100%; display: inline-block; float: left; padding: 10px; background-color: #fff; border-radius: 25px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); margin-bottom: 10px; cursor: pointer;}
+.mypage_info_wrap:last-child{margin-bottom: 0;}
+.mypage_profile_img{width: 70px; height: 70px; display: inline-block; float: left; border-radius: 15px; position: relative; margin-right: 20px;}
+.mypage_profile_img>img{width: 100%; height: 100%; display: inline-block; float: left; object-fit: cover; border-radius: 13px;}
+.mypage_profile_img_btn{width: 25px; height: 25px; display: inline-block; float: left; background-color: #11293c; position: absolute; bottom: -2px; right: -10px; border-radius: 15px;}
+.mypage_profile_img_btn img{width: 13px; display: inline-block; float: left; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.mypage_info_box{width: calc(100% - 170px); display: inline-block; float: left; height: 70px; padding: 16px 0; margin-right: 20px;}
+.mypage_name{width: 100%; display: inline-block; float: left; font-size: 15px; height: 15px; line-height: 15px; font-weight: 700; margin-bottom: 10px;}
+.mypage_age{width: 100%; display: inline-block; float: left; font-size: 13px; color: #666; font-weight: 700; height: 13px; line-height: 13px;}
+.mypage_add_btn_wrap{width: 50px; height: 70px; display: inline-block; float: left; position: relative; margin-right: 10px;}
+.mypage_add_btn{width: 100%; height: 50px; display: inline-block; float: left; background-color: #11293c; position: absolute; top: 50%; left: 0; transform: translateY(-50%); border-radius: 15px;}
+.mypage_add_btn img{width: 13px; display: inline-block; float: left; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+
+.mypage_menu_wrap{width: 100%; display: inline-block; float: left; padding-top: 10px;}
+.mypage_menu{width: calc(50% - 5px); display: inline-block; float: left; height: 50px; line-height: 48px; border-radius: 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); background-color: #fff; text-align: center; font-size: 13px; margin-right: 10px; margin-top: 10px; font-weight: 700; color: #11293c;}
+.mypage_menu:nth-child(2n){margin-right: 0;}
+.mypage_menu:nth-child(1), .mypage_menu:nth-child(2){margin-top: 0;}
+
+/*행동문제검사*/
+.develop_container_third .develop_con, .develop_history_wrap_third .develop_history{margin-bottom: 0!important; width: calc(33.333% - 6.666px)!important; margin-right: 10px!important;}
+.develop_container_third .develop_con:nth-child(3n), .develop_history_wrap_third .develop_history:nth-child(3n){margin-right: 0!important;}
+.graph_container_third .graph_con{width: 33.333%;}
+.test_question_option_title{width: 100%; display: inline-block; float: left; margin-bottom: 10px;}
+.test_question_option_title span{padding: 0 7px; display: inline-block; float: left; height: 23px; line-height: 23px; font-size: 13px; color: #fff; border-radius: 5px; background-color: #11293c; font-weight: 700;}
+.severity_title span{background-color: #BA0000;}
+
+/*자녀변경하기*/
+.mypage_info_wrap_off{border-color: #999; background-color: #eee;}
+.mypage_info_wrap_off .mypage_profile_img{border-color: #999;}
+.mypage_info_wrap_off .mypage_profile_img_btn{background-color: #999;}
+
+
+/*수정요청사항-----------------------------------------------------------------------------------------------------------------------------------------*/
+/*2024년 9월 20일자 수정요청사항*/
+.therapy_con, .therapy_add, .drug_con, .action_con{border: 1px solid #118dd8; background-color: #F2FAFF;}
+.therapy_name_wrap{width: 100%; display: inline-block; float: left; margin-bottom: 15px;} 
+.therapy_name_text{width: 100%; display: inline-block; float: left; text-align: center; font-size: 15px; font-weight: 900; margin-bottom: 3px; color: #333;}
+.therapy_name_text:last-child{margin-bottom: 0;}
+.therapy_btn{width: 100%; display: inline-block; float: left; font-size: 12px; line-height: 12px; text-align: center; color: #999; font-weight: 700;}
+
+/*2024년 9월 20일자 수정요청사항*/
+.therapy_con, .therapy_add, .drug_con, .action_con{border: 2px solid #118dd8; background-color: #F2FAFF;}
+.therapy_con{padding: 15px;}
+.therapy_name_wrap{width: calc(100% - 6px); display: inline-block; float: left; height: 40px; margin-bottom: 0;} 
+.therapy_name_text{width: 100%; display: inline-block; float: left; text-align: left; font-size: 13px; font-weight: 900; margin-bottom: 3px; color: #333;}
+.therapy_name_text:last-child{margin-bottom: 0;}
+.therapy_btn{width: 6px; display: inline-block; float: right; height: 40px; position: relative;}
+.therapy_btn img{width: 100%; display: inline-block; float: left; position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.therapy_add_wrap{width: 100%; display: inline-block; float: left; position: absolute; bottom: -30px; left: 0; height: 60px; border: 2px solid #118dd8; background-color: #F2FAFF; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); text-align: center; font-size: 15px; font-weight: 700; border-radius: 15px;}
+.therapy_add_inner{display: inline-block; height: 100%;}
+.therapy_add_text{display: inline-block; float: left; height: 100%; line-height: 56px; font-size: 13px; font-weight: 700; margin-right: 7px;}
+.therapy_add_img{width: 11px; display: inline-block; float: left; height: 100%; position: relative;}
+.therapy_add_img img{width: 100%; height: 11px; display: inline-block; float: left;  position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+.drug_con{width: calc(50% - 5px); margin-right: 10px;}
+.drug_con:nth-child(2n){margin-right: 0;}
+
+
+/*2024년 10월 23일 수요일 화상미팅 후 수정요청사항*/
+/*회원가입시 프로필 사진 추가*/
+.input_imgbox_wrap{width: 125px; height: 125px; display: inline-block; float: left; border-radius: 10px; position: relative; background-color: #fff; overflow: hidden; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.input_imgbox_view{width: 100%; height: 100%; display: inline-block; float: left; position: relative; z-index: 1;}
+.input_imgbox_view img{width: 100%; height: 100%; display: inline-block; float: left; object-fit: cover;}
+.input_imgbox{width: 100%; height: 100%; display: inline-block; float: left; position: absolute; top: 0; left: 0; z-index: 1;}
+.input_img{width: 100%; height: 100%; display: inline-block; float: left; position: relative;}
+.input_img img{width: 19px; height: unset; display: inline-block; float: left; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.input_imgbox input{width: 100%; height: 100%; display: inline-block; float: left; position: absolute; top: 0; left: 0; z-index: 2; opacity: 0;}
+
+/*회원가입시 입력창 하단 부가설명*/
+.input_detail_sub{width: 100%; display: inline-block; float: left; color: #333; font-size: 13px; text-align: right; margin-top: 5px;}
+
+/*회원가입시 복용시간 변경*/
+.input_time{width: 100%; display: inline-block; float: left;}
+.time{width: calc(25% - 3.75px); display: inline-block; float: left; height: 50px;  border-radius: 10px; line-height: 50px; text-align: center; font-size: 13px; margin-right: 5px; cursor: pointer; background-color: #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); color: #999;}
+.time:last-child{margin-right: 0;}
+.time_on{background-color: #11293c; color: #fff; font-weight: 700;}
+
+/*수정/삭제 버튼 수정*/
+.more_menu_container{width: 80px; display: none; float: left; background-color: #fff; border-radius: 10px; position: absolute; top: 45px; right: 0; z-index: 1; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.more_menu_con{width: 100%; display: inline-block; float: left; height: 35px; line-height: 35px; border-bottom: 1px solid #eee; text-align: center; font-size: 12px;}
+.more_menu_con:last-child{border-bottom: 0;}
+
+/*메모 수정*/
+.memo_input_con{padding-top: 15px; border-top: 1px solid #fff; margin-top: 5px;}
+
+/*약물 히스토리 추가*/
+.drug_history_wrap{width: 100%; display: inline-block; float: left; margin-top: 20px; padding-top: 20px; border-top: 1px solid #fff;}
+.drug_history_title{width: 100%; display: inline-block; float: left; font-size: 13px; font-weight: 700; color: #333; margin-bottom: 5px;}
+.drug_history_container{width: 100%; display: inline-block; float: left;}
+.drug_history_con{width: 100%; display: inline-block; float: left; padding: 10px; border-radius: 10px; background-color: #fff; margin-bottom: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.drug_history_con:last-child{margin-bottom: 0;}
+.drug_history_name{width: 100%; display: inline-block; float: left; line-height: 140%; font-size: 13px; margin-bottom: 5px;}
+.drug_history_date{width: 100%; display: inline-block; float: left; font-size: 13px; color: #666;}
+
+/*약이미지 수정*/
+.input_drug_img{width: 150px; height: 150px;}
+.input_drug_img img{box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); border-radius: 10px;}
+
+/*평가 그래프 추가*/
+.graph_wrap{width: 100%; display: inline-block; float: left; margin-top: 15px;}
+
+/*평가 안내문*/
+.test_notice{width: 100%; display: inline-block; float: left; font-size: 13px; line-height: 13px; height: 13px; text-align: center; color: #11293c; font-weight: 700;}
+
+
+/*거주지 추가*/
+.input_address_wrap{width: 100%; display: inline-block; float: left;}
+.input_address{width: calc(50% - 5px); display: inline-block; float: left; margin-right: 10px;}
+.input_address:last-child{margin-right: 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
